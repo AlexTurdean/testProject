@@ -21,7 +21,7 @@ const UserSchema = new Schema({
     shifts: [
         {
             date: { type: Date, required: true},
-            hour: { type: Number, enum: [0, 8, 16], required: true }
+            hour: { type: Number, enum: {values: ['0', '8', '16'], message: 'Hours accepts are 0,8,16'}, required: true }
         },
         { required: false }
     ]
